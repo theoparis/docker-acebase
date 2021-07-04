@@ -1,0 +1,6 @@
+services:
+    db:
+        build: .
+        ports:
+            - 5757:5757
+        env_file: .env
