@@ -1,8 +1,11 @@
 FROM node:alpine
 
+RUN apk add --no-cache git && \
+    npm i -g npm
+
 WORKDIR /app
 COPY . .
-RUN npm install
+RUN npm ci
 
 ENV ACE_DB mydb
 ENV ACE_ADMIN_PASS s3cr3t
