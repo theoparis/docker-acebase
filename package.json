@@ -13,15 +13,34 @@
     },
     "main": "src/index.js",
     "license": "MIT",
+    "engines": {
+        "node": ">=14",
+        "npm": ">=7"
+    },
     "scripts": {
-        "start": "node src/index.js"
+        "start": "node src/index.js",
+        "lint": "eslint . --fix",
+        "postinstall": "husky install",
+        "commit": "cz"
     },
     "devDependencies": {
+        "@commitlint/cli": "^12.1.4",
+        "@commitlint/config-conventional": "^12.1.4",
+        "cz-conventional-changelog": "^3.3.0",
+        "eslint": "^7.30.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-prettier": "^3.4.0",
+        "husky": "^7.0.0",
         "prettier": "^2.3.2"
     },
     "dependencies": {
         "acebase-server": "^1.2.2",
         "dotenv": "^10.0.0",
         "nanoid": "^3.1.23"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
     }
 }

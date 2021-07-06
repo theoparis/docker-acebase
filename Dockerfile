@@ -2,7 +2,7 @@ FROM node:alpine
 
 WORKDIR /app
 COPY . .
-RUN yarn install
+RUN npm install
 
 ENV ACE_DB mydb
 ENV ACE_ADMIN_PASS s3cr3t
@@ -12,4 +12,4 @@ ENV ACE_PATH /data
 VOLUME [ "/data" ]
 EXPOSE 5757
 
-CMD yarn run start
+CMD npm run start

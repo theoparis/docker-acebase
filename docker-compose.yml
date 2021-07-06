@@ -1,6 +1,8 @@
 services:
     db:
         build: .
+        volumes:
+            - ./data:/data
         ports:
             - 5757:5757
         env_file: .env
