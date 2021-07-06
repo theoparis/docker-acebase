@@ -20,6 +20,8 @@ ACE_PATH=/data
 services:
     db:
         image: creepinson/acebase
+        volumes:
+            - ./data:/data
         ports:
             - 5757:5757
         env_file: .env
